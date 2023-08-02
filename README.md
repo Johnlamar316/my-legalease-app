@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Clone the repository: git clone https://github.com/Johnlamar316/my-legalease-app.git
+
+Navigate to the project directory: cd my-legalease-app
+
+Install dependencies: npm install
+
+Start the development server: npm start
+
 First, run the development server:
 
 ```bash
@@ -13,6 +21,10 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Explore the application: The main dashboard page will display company information with tooltips showing previous company names when you hover over the company name. You can click the "Details" button to view more details about each company. The data is loaded from a mock data file (data.js) and the colours for the sectors are mocked as well (getSectorColor function in constants/index.js).
+<img src="https://github.com/Johnlamar316/my-legalease-app/blob/main/Screenshot%202023-08-02%20at%2023.34.37.png">
+<img src="https://github.com/Johnlamar316/my-legalease-app/blob/main/Screenshot%202023-08-02%20at%2023.34.55.png">
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
