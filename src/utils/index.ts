@@ -35,4 +35,3 @@ export const calculateRating = (value: number, max: number) => {
   return ((value - 1) / (max - 1)) * (maxRating - minRating) + minRating;
 };
 
-export { Ranking };

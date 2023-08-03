@@ -41,9 +41,7 @@ export default function Home() {
         }}>
         <Typography variant="h4">Legalease App</Typography>
         <Link href="/rankings" passHref>
-          <StyledButton variant="contained" className={"button"}>
-            Go to App
-          </StyledButton>
+          <StyledButton variant="contained">Go to App</StyledButton>
         </Link>
       </HomeContainer>
     </Fragment>

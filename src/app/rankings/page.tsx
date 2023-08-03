@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { Ranking, getRankingCompany } from "../../utils";
+import { getRankingCompany } from "../../utils/index";
+import { Ranking } from "../../utils/type";
 import RankingList from "@/components/RankingList";
 
 export interface RankingsType {

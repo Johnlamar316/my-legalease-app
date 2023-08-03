@@ -3,7 +3,7 @@ import { calculateRating } from "../utils/index";
 import { Badge, Typography, Rating } from "@mui/material";
 import styled from "styled-components";
 
-interface Badge {
+export interface Badge {
   id: string;
   name: string;
   slug: string;

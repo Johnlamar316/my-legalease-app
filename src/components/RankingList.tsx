@@ -5,12 +5,25 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import styled from "styled-components";
 import FilterBar, { FilterOption } from "./FilterBar";
 import SortBar, { SortOption } from "./SortBar";
-import RankingCard from "./RankingCard";
+import RankingCard, { Badge } from "./RankingCard";
 import RatingGroup from "./Rating";
 import Link from "next/link";
+import { Ranking } from "../utils/type";
 
 interface RankingListProps {
   data: RankingsType;
+}
+
+export interface Firm {
+  id: string;
+  name: string;
+  badges: Badge[];
+  firmRegions: {
+    crossBorderCapability: string;
+    booking: boolean;
+    expertiseAndReputationRating: number;
+    clientSatisfactionRating: number;
+  }[];
 }
 
 const StyledContainer = styled(Container)`
@@ -63,8 +76,8 @@ const RankingList: React.FC<RankingListProps> = ({ data }) => {
   );
   const { rankingsData } = data;
 
-  const filteredRankings = rankingsData.filter((ranking: any) => {
-    if (filterValue === "all") return true;
+  const filteredRankings = rankingsData.filter((ranking: Ranking) => {
+    if (filterValue === FilterOption.All) return true;
     return (
       ranking?.firm?.firmRegions[0].crossBorderCapability ===
       filterValue.toUpperCase()
@@ -101,7 +114,7 @@ const RankingList: React.FC<RankingListProps> = ({ data }) => {
           <SortContainer>
             <SortBar sortValue={sortValue} setSortValue={setSortValue} />
           </SortContainer>
-          {sortedRankings.map(({ firm, id }: any) => {
+          {sortedRankings.map(({ firm, id }: { firm: Firm; id: string }) => {
             const { badges, firmRegions } = firm;
             const isBookingFirm = firmRegions[0]?.booking;
             return (
